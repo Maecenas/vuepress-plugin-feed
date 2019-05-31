@@ -150,12 +150,18 @@ PLUGIN.get_options_defaults = ( context ) =>
 
 		// order of what gets the highest priority:
 		//
-		// 1. frontmatter
-		// 2. page excerpt
-		// 3. content markdown paragraph
-		// 4. content regular html <p>
+		// 1. full-text content
+		// 2. frontmatter
+		// 3. page excerpt
+		// 4. content markdown paragraph
+		// 5. content regular html <p>
 
 		description_sources: [
+
+			// full-text html
+			// @todo: needs to resolve absolute (/*) and relative (./*) img src
+			//
+			'content',
 
 			'frontmatter',
 			'excerpt',
